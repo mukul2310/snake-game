@@ -9,6 +9,8 @@ function init() {
     food_img= new Image();
     food_img.src="images/apple.png";
     
+    snake_img=new Image();
+    snake_img.src="images/snake.png";
     trophy=new Image();
     trophy.src="images/trophy.png";
     food = getRandomFood();
@@ -29,7 +31,7 @@ function init() {
         drawSnake: function () {
             for (var i = 0; i < this.cells.length; i++) {
                 pen.fillStyle = this.color;
-                pen.fillRect(this.cells[i].x * cell_size, this.cells[i].y * cell_size, cell_size - 2, cell_size - 2);
+                pen.drawImage(snake_img,this.cells[i].x * cell_size, this.cells[i].y * cell_size, cell_size, cell_size);
             }
         },
         updateSnake: function () {
@@ -94,7 +96,7 @@ function draw() {
     pen.fillStyle = food.color;
 pen.drawImage(food_img,food.x*cell_size,food.y*cell_size,cell_size,cell_size);
 
-    pen.drawImage(trophy,20,20,cell_size,cell_size);
+    pen.drawImage(trophy,24,20,cell_size,cell_size);
     pen.fillStyle="blue";
     pen.font="20px Roboto";
     pen.fillText(score,50,50);
