@@ -1,7 +1,7 @@
 function init() {
     var canvas = document.getElementById("mycanvas");
-    W = canvas.width = 1000;
-    H = canvas.height = 1000;
+    W = canvas.width = 700;
+    H = canvas.height = 650;
     cell_size = 66;
     score=5;
     pen = canvas.getContext('2d');
@@ -120,10 +120,14 @@ function getRandomFood() {
 
 function gameloop() {
     if (game_over)
-        clearInterval(f);
-    draw();
+        
+{
+	clearInterval(f);
+alert("game over");
+}    
+draw();
     update();
 
 }
 init();
-f = setInterval(gameloop, 100);
+f = setInterval(gameloop, 150);
