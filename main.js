@@ -131,5 +131,11 @@ draw();
     update();
 
 }
+
+init();
+function start()
+{
 init();
 f = setInterval(gameloop, 150);
+
+}

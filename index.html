@@ -4,6 +4,9 @@
 <head>
     <title>Snake Game</title>
     <link rel="icon" type="image/png" href="images/%E2%80%94Pngtree%E2%80%94cartoon%20cute%20little%20green%20snake_4181015.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         #mycanvas {
             background-image: url("images/bg.jpg");
@@ -14,8 +17,25 @@
 </head>
 
 <body>
+	<div style="float: left;">
     <canvas id="mycanvas" style="align-content: center;"></canvas>
     <script src="main.js"></script>
+    </div>
+    <div style="float: right; margin-top: 280px; margin-right: 300px;">
+    	<a class="waves-effect waves-light btn-large" onclick="start()" >Start</a>
+    	<span>
+    		<h2>Instructions</h2>
+    		Press UP key for upward movement<br><br>
+
+    		Press DOWN key for downward movement<br><br>
+
+    		Press LEFT key for left movement<br><br>
+
+    		Press RIGHT key for right movement<br><br>
+
+    		Eat the fruits to increase your score and snake's length too.😛
+    	</span>
+    </div>
 </body>
 
 </html>
