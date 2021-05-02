@@ -22,7 +22,11 @@
     <script src="main.js"></script>
     </div>
     <div style="float: right; margin-top: 280px; margin-right: 300px;">
-    	<a class="waves-effect waves-light btn-large" onclick="start()" >Start</a>
+        <span></span>
+    	<a class="waves-effect waves-light btn-large" onclick="start(150)">Easy</a>
+    	<a class="waves-effect waves-light btn-large" onclick="start(110)">Medium</a>
+    	<a class="waves-effect waves-light btn-large" onclick="start(90)">Difficult</a>
+        
     	<span>
     		<h2>Instructions</h2>
     		Press UP key for upward movement<br><br>
@@ -37,5 +41,12 @@
     	</span>
     </div>
 </body>
-
+<script src="jquery-3.5.1.min.js"></script>
+<script async>
+    $(document).ready(function () 
+      {
+        init();
+        draw();
+      });
+</script>
 </html>
