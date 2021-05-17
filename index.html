@@ -21,8 +21,9 @@
     <canvas id="mycanvas" style="align-content: center;"></canvas>
     <script src="main.js"></script>
     </div>
-    <div style="float: right; margin-top: 280px; margin-right: 300px;">
-        <span></span>
+    <div style="float: right; margin-top: 80px; margin-right: 300px;">
+        <h2 id="high_score">High Score</h2>
+        
     	<a class="waves-effect waves-light btn-large" onclick="start(150)">Easy</a>
     	<a class="waves-effect waves-light btn-large" onclick="start(110)">Medium</a>
     	<a class="waves-effect waves-light btn-large" onclick="start(90)">Difficult</a>
@@ -47,6 +48,10 @@
       {
         init();
         draw();
+        if(localStorage.getItem("high_score")==null)
+        $("#high_score").html('High Score: '+0);
+        else
+        $("#high_score").html('High Score: '+localStorage.getItem("high_score"));
       });
 </script>
 </html>
