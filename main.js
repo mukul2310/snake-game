@@ -130,10 +130,10 @@ function gameloop()
 {
     if (game_over)
     {
-        let lastHighScore=localStorage.getItem("high_score");
-        if(lastHighScore!=null&& score>lastHighScore)
-            localStorage.setItem("high_score",score);
-        $("#high_score").html('High Score: '+localStorage.getItem("high_score"));
+        let lastHighScore=sessionStorage.getItem("high_score");
+        if(lastHighScore==null || score>lastHighScore)
+            sessionStorage.setItem("high_score",score);
+        $("#high_score").html('High Score: '+sessionStorage.getItem("high_score"));
         clearInterval(f);
         alert("game over");
     }

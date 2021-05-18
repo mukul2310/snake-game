@@ -48,10 +48,10 @@
       {
         init();
         draw();
-        if(localStorage.getItem("high_score")==null)
-        $("#high_score").html('High Score: '+0);
+        if(sessionStorage.getItem("high_score")==null)
+            $("#high_score").html('High Score: '+0);
         else
-        $("#high_score").html('High Score: '+localStorage.getItem("high_score"));
+            $("#high_score").html('High Score: '+sessionStorage.getItem("high_score"));
       });
 </script>
 </html>
