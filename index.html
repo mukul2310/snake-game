@@ -5,7 +5,7 @@
     <title>Snake Game</title>
     <link rel="icon" type="image/png" href="images/%E2%80%94Pngtree%E2%80%94cartoon%20cute%20little%20green%20snake_4181015.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         #mycanvas {
@@ -42,16 +42,4 @@
     	</span>
     </div>
 </body>
-<script src="jquery-3.5.1.min.js"></script>
-<script async>
-    $(document).ready(function () 
-      {
-        init();
-        draw();
-        if(sessionStorage.getItem("high_score")==null)
-            $("#high_score").html('High Score: '+0);
-        else
-            $("#high_score").html('High Score: '+sessionStorage.getItem("high_score"));
-      });
-</script>
 </html>

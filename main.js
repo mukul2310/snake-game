@@ -15,14 +15,15 @@ function init()
     trophy = new Image();
     trophy.src = "images/trophy.png";
     food = getRandomFood();
-    snake = {
+    snake = 
+    {
         init_len: 5,
         cells: [],
         direction: "right",
 
         createSnake: function () 
         {
-            for (var i = this.init_len-1; i >= 0; i--) {
+            for (let i = this.init_len-1; i >= 0; i--) {
                 this.cells.push({
                     x: i,
                     y: 0
@@ -31,7 +32,7 @@ function init()
         },
         drawSnake: function () 
         {
-            for (var i = 0; i < this.cells.length; i++) 
+            for (let i = 0; i < this.cells.length; i++) 
             {
                 pen.drawImage(snake_img, this.cells[i].x * cell_size, this.cells[i].y * cell_size, cell_size, cell_size);
             }
@@ -77,8 +78,6 @@ function init()
                     game_over = true;
                 }
             }
-            
-
         }
     };
 
@@ -130,10 +129,12 @@ function gameloop()
 {
     if (game_over)
     {
-        let lastHighScore=sessionStorage.getItem("high_score");
-        if(lastHighScore==null || score>lastHighScore)
-            sessionStorage.setItem("high_score",score);
-        $("#high_score").html('High Score: '+sessionStorage.getItem("high_score"));
+        if(localStorage.length==0)
+        localStorage.setItem("high_score",0);
+        let lastHighScore=localStorage.getItem("high_score");
+        if(score>lastHighScore)
+            localStorage.setItem("high_score",score);
+        $("#high_score").html(`High Score: ${localStorage.getItem("high_score")}`);
         clearInterval(f);
         alert("game over");
     }
@@ -148,3 +149,13 @@ function start(speed)
     init();
     f = setInterval(gameloop, speed);
 }
+$(()=>
+{
+    init();
+    draw();
+    if(localStorage.length==0)
+    {
+        localStorage.setItem("high_score",0);
+    }
+    $("#high_score").html(`High Score: ${localStorage.getItem("high_score")}`);
+});
